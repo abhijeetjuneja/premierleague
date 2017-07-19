@@ -33,7 +33,7 @@ app.config(['$routeProvider','$locationProvider', function($routeProvider,$locat
             }
         );
         $locationProvider.html5Mode({
-  enabled: true,
+  enabled: false,
   requireBase: false
-});
+}).hashPrefix('');
 }]);
