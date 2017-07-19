@@ -32,5 +32,8 @@ app.config(['$routeProvider','$locationProvider', function($routeProvider,$locat
                 template   : '<h1>404 page not found</h1>'
             }
         );
-        $locationProvider.html5Mode(true);
+        $locationProvider.html5Mode({
+  enabled: true,
+  requireBase: false
+});
 }]);
