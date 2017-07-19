@@ -23,6 +23,28 @@ app.controller('mainController',['detailService',function(detailService){
     detailService.bg=bg;
 
   }
+
+
+  if(is_touch_device())
+  {
+
+  }
+  else {
+    $(".first").mouseover(function() {
+      $(this).css('-webkit-filter', 'none');
+  }).mouseout(function() {
+      $(this).css('-webkit-filter','grayscale(100%)');
+  });
+  $(".second").mouseover(function() {
+    $(this).css('-webkit-filter', 'none');
+}).mouseout(function() {
+    $(this).css('-webkit-filter','grayscale(100%)');
+});
+  }
+  function is_touch_device() {
+return 'ontouchstart' in window        // works on most browsers
+    || navigator.maxTouchPoints;       // works on IE10/11 and Surface
+};
 m.setList=function(id){
       if(id===1)
         detailService.list=detailService.list1;
@@ -280,9 +302,7 @@ for(i in m.obj.rounds)
 }]);
 
 $( document ).ready(function() {
-if ("ontouchstart" in document.documentElement) {
-    document.documentElement.className += " touch";
-} else {
-    document.documentElement.className += " no-touch";
-}
+
+
+
 });
