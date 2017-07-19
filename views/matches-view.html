@@ -11,22 +11,22 @@
     <span class="caret"></span></button>
     <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
       <li role="presentation">
-      <a role="menuitem" tabindex="-1" href="#" ng-click="matches.selected(1)" >
+      <a role="menuitem" tabindex="-1"  ng-click="matches.selected(1)" >
         Team
       </a>
       </li>
       <li role="presentation" >
-      <a role="menuitem" tabindex="-1" href="#" ng-click="matches.selected(2)" >
+      <a role="menuitem" tabindex="-1"  ng-click="matches.selected(2)" >
         Year
       </a>
       </li>
       <li role="presentation">
-      <a role="menuitem" tabindex="-1" href="#" ng-click="matches.selected(3)" >
+      <a role="menuitem" tabindex="-1" ng-click="matches.selected(3)" >
         Goals
       </a>
       </li>
       <li role="presentation">
-      <a role="menuitem" tabindex="-1" href="#" ng-click="matches.selected(4)" >
+      <a role="menuitem" tabindex="-1"  ng-click="matches.selected(4)" >
         Matchday
       </a>
       </li>
@@ -40,7 +40,7 @@
   <span class="caret"></span></button>
   <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
     <li role="presentation" ng-repeat="team in matches.teams">
-    <a role="menuitem" tabindex="-1" href="#" ng-click="matches.filterItem(team,0)" >
+    <a role="menuitem" tabindex="-1" ng-click="matches.filterItem(team,0)" >
       {{team}}
     </a>
   </li>
@@ -53,12 +53,12 @@
   <span class="caret"></span></button>
   <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
     <li role="presentation" >
-    <a role="menuitem" tabindex="-1" href="#" ng-click="matches.filterItem(matches.list.data.rounds[0].matches[0].date,1)" >
+    <a role="menuitem" tabindex="-1" ng-click="matches.filterItem(matches.list.data.rounds[0].matches[0].date,1)" >
       {{matches.list.data.rounds[0].matches[0].date | date : "y"}}
     </a>
   </li>
   <li role="presentation">
-  <a role="menuitem" tabindex="-1" href="#" ng-click="matches.filterItem(matches.list.data.rounds[37].matches[0].date,1)" >
+  <a role="menuitem" tabindex="-1"  ng-click="matches.filterItem(matches.list.data.rounds[37].matches[0].date,1)" >
     {{matches.list.data.rounds[37].matches[0].date | date : "y"}}
   </a>
   </li>
@@ -72,22 +72,22 @@
   <span class="caret"></span></button>
   <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
     <li role="presentation">
-    <a role="menuitem" tabindex="-1" href="#" ng-click="matches.filterItem('0 goals')" >
+    <a role="menuitem" tabindex="-1"  ng-click="matches.filterItem('0 goals')" >
       0
     </a>
   </li>
   <li role="presentation">
-  <a role="menuitem" tabindex="-1" href="#" ng-click="matches.filterItem('3 goals')" >
+  <a role="menuitem" tabindex="-1"  ng-click="matches.filterItem('3 goals')" >
     1-3
   </a>
 </li>
 <li role="presentation">
-<a role="menuitem" tabindex="-1" href="#" ng-click="matches.filterItem('6 goals')" >
+<a role="menuitem" tabindex="-1"  ng-click="matches.filterItem('6 goals')" >
   4-6
 </a>
 </li>
 <li role="presentation">
-<a role="menuitem" tabindex="-1" href="#" ng-click="matches.filterItem('>6 goals')" >
+<a role="menuitem" tabindex="-1" ng-click="matches.filterItem('>6 goals')" >
   >6
 </a>
 </li>
@@ -100,7 +100,7 @@
   <span class="caret"></span></button>
   <ul class="dropdown-menu" role="menu"  aria-labelledby="menu1">
     <li role="presentation"  ng-repeat="match in matches.list.data.rounds">
-    <a role="menuitem" tabindex="-1" href="#" ng-click="matches.filterItem($index,4)" >
+    <a role="menuitem" tabindex="-1"  ng-click="matches.filterItem($index,4)" >
       Matchday {{$index+1}}
     </a>
   </li>
