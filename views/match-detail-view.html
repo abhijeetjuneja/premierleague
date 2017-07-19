@@ -1,0 +1,39 @@
+<div class="container-fluid  " ng-class="[{ bgmatches1 : details.bg == 1 },{'bgmatches2' : details.bg == 2}]">
+  <div class="container-fluid text-center detailMain ">
+    <div class="row">
+      <div class="col-xs-12 col-sm-6 col-md-6 matchhead text-center">
+      <b>Match Report</b>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-12 col-sm-6 col-md-6 container-fluid text-center matchdetail font-white">
+        <table class="table table-hover myTab text-center">
+          <thead>
+             <tr>
+               <th>Home team</th>
+               <th> - </th>
+               <th>{{details.match.team1.name}}</th>
+             </tr>
+             <tr>
+               <th>Away team</th>
+               <th> - </th>
+               <th>{{details.match.team2.name}}</th>
+
+             </tr>
+             <tr>
+               <th>  Scoreline</th>
+               <th> - </th>
+               <th>  {{details.match.score1}}-{{details.match.score2}}</th>
+             </tr>
+             <tr>
+               <th>  Date</th>
+               <th> - </th>
+               <th>{{details.match.date | date : "fullDate" }}</th>
+             </tr>
+           </thead>
+        </table>
+        <p><b>{{details.review}}</b></p>
+      </div>
+    </div>
+  </div>
+</div>

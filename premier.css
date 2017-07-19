@@ -1,0 +1,315 @@
+body{
+overflow-x: hidden;
+}
+
+.navbar-default,.navbar-brand,.navbar-toggle{
+  background-color: #05f1ff;
+  color:white!important;
+  vertical-align: middle;
+  margin-bottom: 0;
+  height: 10vh;
+
+}
+.nav-image{
+  height:9vh;
+  width: auto;
+}
+.navbar-brand{
+  padding-top: 4px;
+}
+.navbar{
+  filter: drop-shadow(0px 8px 8px black);
+}
+.navbar,.navbar-collapse{
+  border: 0;
+  border-color:#05f1ff!important;
+}
+.jumbotron{
+  background: transparent;
+  color: white;
+
+}
+.btn{
+  background: white;
+  color: black;
+
+}
+.first{
+  background-image: url('http://img05.deviantart.net/8ebe/i/2016/123/c/a/wallpaper_iphone_leicester_city_champion_premier_by_ghanibvb-da1738a.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 90vh;
+
+  line-height: 90vh!important;
+  text-align: center!important;
+  font-size: 4vmax;
+  vertical-align: bottom;
+  text-shadow: 5px 5px 10px black;
+}
+.second{
+  background-image: url('https://s-media-cache-ak0.pinimg.com/originals/ea/07/63/ea0763cb779d74e70d3aca137f96af5b.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 90vh;
+  font-size: 4vmax;
+  line-height: 90vh!important;
+  text-align: center!important;
+  vertical-align: bottom;
+    text-shadow: 5px 5px 10px black;
+
+}
+.bgmatches1{
+  background-image: url('http://orig13.deviantart.net/8c7e/f/2016/128/e/9/leicester_city_fc_by_theianhammer-da1pp9t.jpg')!important;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+    min-height: 90vh;
+
+}
+.bgmatches2{
+  background-image: url('http://orig00.deviantart.net/fb35/f/2016/251/5/6/chelsea_wallpaper_by_tdecfc-dagxcau.png')!important;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  min-height: 90vh;
+
+}
+.btn-group{
+  float:left;
+
+}
+.btn-group1{
+  float:right;
+  background-color: #05f1ff;
+  color:#38003d;
+}
+.btn-group2{
+  background-color: #05f1ff;
+  color:#38003d;
+}
+.dropdown-menu{
+    background-color: #05f1ff;
+    color:#38003d!important;
+}
+.no-touch,.first{
+    -webkit-filter: grayscale(100%);
+}
+.no-touch,.second{
+    -webkit-filter: grayscale(100%);
+}
+.no-touch,.second:hover{
+  -webkit-filter: none;
+}
+.no-touch,.first:hover{
+  -webkit-filter: none;
+}
+.dropdown-menu {
+   max-height:100px;
+   overflow:scroll;
+}
+
+.myScores{
+  background-image: url('http://www.bumpfunsoccer.com/images/photos/bg-blurred.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 0;
+  padding-bottom:15px;
+  filter: drop-shadow(0px 8px 8px black);
+}
+.row{
+  text-align: center;
+}
+.detailMain{
+  margin-top:20vh;
+  filter: drop-shadow(0px 8px 8px black);
+}
+.matchdetail{
+  margin:auto;
+  float: none;
+  color: white;
+  background-color: #38003d!important;
+
+}
+.matchmargin{
+    margin-top:20vh;
+}
+.matches{
+  margin:auto;
+  float: none;
+  margin-bottom: 21vh;
+}
+.matchhead{
+  margin:auto;
+  float: none;
+  color:#38003d;
+  background-color: #05f1ff!important;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  font-size: 15px;
+}
+.matchTable{
+
+  color: white;
+  border-style: none;
+  margin-left: 0;
+  margin-right: 0;
+   width: 100% !important;
+}
+.points{
+  background-image: url('http://www.bumpfunsoccer.com/images/photos/bg-blurred.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin:auto;
+  float: none;
+  color: white;
+  filter: drop-shadow(0px 8px 8px black);
+}
+.pointTable{
+  margin-top:10vh;
+  filter: drop-shadow(0px 8px 8px black);
+}
+.tableMargin{
+  padding-bottom: 10vh;
+}
+ .table th{
+   text-align: center;
+ }
+ .myTab tr{
+   border: none!important;
+ }
+.font-white{
+  color: white;
+}
+
+#myFooter {
+    background-color: #05f1ff;
+    color: #38003d;
+
+    width:100%;
+    
+
+}
+
+#myFooter .row {
+
+}
+
+#myFooter .info{
+    text-align: justify;
+    color: #38003d;
+}
+
+#myFooter ul {
+    list-style-type: none;
+    padding-left: 0;
+    line-height: 1.7;
+}
+
+#myFooter h5 {
+    color: #38003d;
+    font-weight: bold;
+    margin-top: 15px;
+}
+
+#myFooter .logo{
+    margin-top: 5px;
+}
+
+#myFooter .second-bar .logo a{
+    color:#38003d;
+    font-size: 28px;
+    float: left;
+    font-weight: bold;
+    line-height: 30px;
+    margin: 0;
+    padding: 0;
+}
+
+#myFooter a {
+    color: #38003d;
+    text-decoration: none;
+}
+
+#myFooter a:hover,
+#myFooter a:focus {
+    text-decoration: none;
+    color: #38003d;
+}
+
+
+
+@media screen and (max-width: 460px) {
+  .points{
+    padding-left: 0;
+    padding-right: 0;
+    font-size: 1.7vmax;
+  }
+  .matchhead{
+    font-size: 2.3vmax;
+  }
+   .table td{
+    padding-left: 0px!important;
+    padding-right: 0px!important;
+  }
+  .table th{
+   padding-left: 2px!important;
+   padding-right: 2px!important;
+ }
+ .bgmatches1,.bgmatches2{
+   padding-left: 0;
+   padding-right: 0;
+   font-size: 1.7vmax;
+ }
+ .btn{
+   padding-left: 8px;
+   padding-right: 8px;
+   padding-top: 5px;
+   padding-bottom: 5px;
+   font-size: 2.3vmax;
+ }
+}
+@media screen and (max-width: 225px) {
+  .points{
+    padding-left: 0;
+    padding-right: 0;
+    font-size: 3vmin;
+  }
+  .matchhead{
+    font-size: 4vmin;
+  }
+   .table td{
+    padding-left: 0px!important;
+    padding-right: 0px!important;
+  }
+  .table th{
+   padding-left: 2px!important;
+   padding-right: 2px!important;
+ }
+ .first,.second{
+   font-size: 8vmin;
+ }
+ .bgmatches1,.bgmatches2{
+   padding-left: 0;
+   padding-right: 0;
+   font-size: 3vmin;
+ }
+ .btn{
+   padding-left: 8px;
+   padding-right: 8px;
+   padding-top: 5px;
+   padding-bottom: 5px;
+   font-size: 4vmin;
+ }
+}
+
+@media screen and (min-width: 768px) {
+    #myFooter {
+        text-align: center;
+    }
+
+    #myFooter .info{
+        text-align: center;
+    }
+  }
