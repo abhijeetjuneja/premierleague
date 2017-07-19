@@ -109,7 +109,9 @@ overflow-x: hidden;
    max-height:100px;
    overflow:scroll;
 }
-
+.pre-scrollable{
+  -webkit-overflow-scrolling: touch!important;
+}
 .myScores{
   background-image: url('http://www.bumpfunsoccer.com/images/photos/bg-blurred.jpg');
   background-repeat: no-repeat;
@@ -188,7 +190,7 @@ overflow-x: hidden;
     color: #38003d;
 
     width:100%;
-    
+
 
 }
 
@@ -240,26 +242,24 @@ overflow-x: hidden;
 
 
 
-@media screen and (max-width: 460px) {
-  .points{
-    padding-left: 0;
-    padding-right: 0;
-    font-size: 1.7vmax;
-  }
-  .matchhead{
-    font-size: 2.3vmax;
-  }
-   .table td{
-    padding-left: 0px!important;
-    padding-right: 0px!important;
-  }
-  .table th{
-   padding-left: 2px!important;
-   padding-right: 2px!important;
- }
+@media screen and (min-width: 226px) and (max-width: 460px) {
+.points{
+  padding-left: 15px!important;
+  padding-right: 15px!important;
+  font-size: 3vmin;
+}
+.matchhead{
+    font-size: 4vmin;
+}
+.table td{
+ padding-left: 0px!important;
+ padding-right: 0px!important;
+}
+.table th{
+padding-left: 2px!important;
+padding-right: 2px!important;
+}
  .bgmatches1,.bgmatches2{
-   padding-left: 0;
-   padding-right: 0;
    font-size: 1.7vmax;
  }
  .btn{
@@ -272,8 +272,8 @@ overflow-x: hidden;
 }
 @media screen and (max-width: 225px) {
   .points{
-    padding-left: 0;
-    padding-right: 0;
+    padding-left: 15px;
+    padding-right: 15px;
     font-size: 3vmin;
   }
   .matchhead{

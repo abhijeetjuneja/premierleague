@@ -152,7 +152,7 @@ console.log(m.item);
 //For the detail page
 this.showDetail=function(obj){
     detailService.matchdetail=obj;
-    $location.path("#/match-detail-view");
+    $location.path("/match-detail-view");
 
   }
 
