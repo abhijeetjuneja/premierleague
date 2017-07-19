@@ -110,7 +110,7 @@ overflow-x: hidden;
    overflow:scroll;
 }
 .pre-scrollable{
-  -webkit-overflow-scrolling: touch!important;
+  
 }
 .myScores{
   background-image: url('http://www.bumpfunsoccer.com/images/photos/bg-blurred.jpg');
