@@ -147,6 +147,9 @@ overflow-x: hidden;
   margin-left: 0;
   margin-right: 0;
    width: 100% !important;
+   height: 100px!important;
+   overflow-y: scroll;
+   -webkit-overflow-scrolling: touch!important;
 }
 .points{
   background-image: url('http://www.bumpfunsoccer.com/images/photos/bg-blurred.jpg');
@@ -170,11 +173,19 @@ overflow-x: hidden;
  .table td{
    -webkit-overflow-scrolling: touch!important;
  }
- .table{
+ .table tbody{
+   height: 50vh!important;
+   overflow-y: scroll;
     -webkit-overflow-scrolling: touch!important;
  }
  .well{
     -webkit-overflow-scrolling: touch!important;
+ }
+
+ .pre-scrollable{
+   height: 50vh!important;
+   overflow-y: scroll;
+   -webkit-overflow-scrolling: touch!important;
  }
  .myTab tr{
    border: none!important;
