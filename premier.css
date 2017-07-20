@@ -107,7 +107,7 @@ overflow-x: hidden;
   background-size: cover;
   padding: 0;
   padding-bottom:15px;
-  filter: drop-shadow(0px 8px 8px black);
+
 }
 .row{
   text-align: center;
@@ -174,8 +174,7 @@ overflow-x: hidden;
     -webkit-overflow-scrolling: touch!important;
  }
  .well{
-   overflow-y: scroll;
-  height: 200px;
+
     -webkit-overflow-scrolling: touch!important;
  }
  .pre-scrollable{
