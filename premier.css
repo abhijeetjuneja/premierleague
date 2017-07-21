@@ -310,12 +310,14 @@ padding-right: 2px!important;
    padding-bottom: 5px;
    font-size: 4vmin;
  }
+ 
 }
 
 @media screen and (max-width: 394px){
 .first,.second{
   font-size: 8vmin;
 }
+
 }
 
 @media screen and (min-width: 768px) {
