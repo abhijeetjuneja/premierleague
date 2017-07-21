@@ -148,7 +148,7 @@ overflow-x: hidden;
   margin-right: 0;
    width: 100% !important;
    -webkit-overflow-scrolling: touch!important;
-   
+
 }
 .points{
   background-image: url('http://www.bumpfunsoccer.com/images/photos/bg-blurred.jpg');
@@ -255,6 +255,12 @@ overflow-x: hidden;
 .matchhead{
     font-size: 4vmin;
 }
+.matches{
+  font-size: 3vmin;
+}
+.detailMain{
+  font-size: 3vmin;
+}
 .table td{
  padding-left: 0px!important;
  padding-right: 0px!important;
@@ -271,7 +277,7 @@ padding-right: 2px!important;
    padding-right: 8px;
    padding-top: 5px;
    padding-bottom: 5px;
-   font-size: 2.3vmax;
+   font-size: 3vmin;
  }
 }
 @media screen and (max-width: 225px) {
@@ -291,9 +297,7 @@ padding-right: 2px!important;
    padding-left: 2px!important;
    padding-right: 2px!important;
  }
- .first,.second{
-   font-size: 8vmin;
- }
+
  .bgmatches1,.bgmatches2{
    padding-left: 0;
    padding-right: 0;
@@ -306,6 +310,12 @@ padding-right: 2px!important;
    padding-bottom: 5px;
    font-size: 4vmin;
  }
+}
+
+@media screen and (max-width: 394px){
+.first,.second{
+  font-size: 8vmin;
+}
 }
 
 @media screen and (min-width: 768px) {
