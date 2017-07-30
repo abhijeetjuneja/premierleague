@@ -151,7 +151,9 @@ app.controller('matchesController',['$scope','$http','$location','detailService'
   m.teams=[];
   //Create teams array in m.teams
    function setTeams(){
-        for (i in detailService.list.data.rounds[0].matches)
+        var i=0;
+        console.time("runs");
+        while(detailService.list.data.rounds[0].matches[i])
         {
           m.teams.push(
             detailService.list.data.rounds[0].matches[i].team1.name
@@ -159,7 +161,9 @@ app.controller('matchesController',['$scope','$http','$location','detailService'
             m.teams.push(
               detailService.list.data.rounds[0].matches[i].team2.name
             );
+            i++;
         }
+        console.timeEnd("runs");
           console.log(m.teams.sort());
       }
     m.team="";

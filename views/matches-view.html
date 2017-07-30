@@ -126,7 +126,7 @@
       </thead>
       <tbody ng-repeat="match in matches.list.data.rounds">
 
-         <tr ng-click="matches.showDetail(matches.list.data.rounds[$parent.$index].matches[$index])"ng-repeat="match in match.matches | filter : matches.item">
+         <tr ng-repeat="match in match.matches | filter : matches.item">
           <td><b>{{match.team1.name}}</td>
           <td><b>{{match.score1}} - {{match.score2}}</td>
             <td><b>{{match.team2.name}}</td>
