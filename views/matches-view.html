@@ -124,12 +124,51 @@
           <th>Away</th>
         </tr>
       </thead>
-      <tbody ng-repeat="match in matches.list.data.rounds">
+      <tbody >
 
-         <tr ng-click="matches.showDetail(matches.list.data.rounds[$parent.$index].matches[$index])"ng-repeat="match in match.matches | filter : matches.item">
+         <tr>
           <td><b>{{match.team1.name}}</td>
           <td><b>{{match.score1}} - {{match.score2}}</td>
             <td><b>{{match.team2.name}}</td>
+              <td><b>{{match.team1.name}}</td>
+              <td><b>{{match.score1}} - {{match.score2}}</td>
+                <td><b>{{match.team2.name}}</td><td><b>{{match.team1.name}}</td>
+                <td><b>{{match.score1}} - {{match.score2}}</td>
+                  <td><b>{{match.team2.name}}</td><td><b>{{match.team1.name}}</td>
+                  <td><b>{{match.score1}} - {{match.score2}}</td>
+                    <td><b>{{match.team2.name}}</td><td><b>{{match.team1.name}}</td>
+                    <td><b>{{match.score1}} - {{match.score2}}</td>
+                      <td><b>{{match.team2.name}}</td><td><b>{{match.team1.name}}</td>
+                      <td><b>{{match.score1}} - {{match.score2}}</td>
+                        <td><b>{{match.team2.name}}</td><td><b>{{match.team1.name}}</td>
+                        <td><b>{{match.score1}} - {{match.score2}}</td>
+                          <td><b>{{match.team2.name}}</td><td><b>{{match.team1.name}}</td>
+                          <td><b>{{match.score1}} - {{match.score2}}</td>
+                            <td><b>{{match.team2.name}}</td><td><b>{{match.team1.name}}</td>
+                            <td><b>{{match.score1}} - {{match.score2}}</td>
+                              <td><b>{{match.team2.name}}</td><td><b>{{match.team1.name}}</td>
+                              <td><b>{{match.score1}} - {{match.score2}}</td>
+                                <td><b>{{match.team2.name}}</td><td><b>{{match.team1.name}}</td>
+                                <td><b>{{match.score1}} - {{match.score2}}</td>
+                                  <td><b>{{match.team2.name}}</td><td><b>{{match.team1.name}}</td>
+                                  <td><b>{{match.score1}} - {{match.score2}}</td>
+                                    <td><b>{{match.team2.name}}</td><td><b>{{match.team1.name}}</td>
+                                    <td><b>{{match.score1}} - {{match.score2}}</td>
+                                      <td><b>{{match.team2.name}}</td><td><b>{{match.team1.name}}</td>
+                                      <td><b>{{match.score1}} - {{match.score2}}</td>
+                                        <td><b>{{match.team2.name}}</td><td><b>{{match.team1.name}}</td>
+                                        <td><b>{{match.score1}} - {{match.score2}}</td>
+                                          <td><b>{{match.team2.name}}</td><td><b>{{match.team1.name}}</td>
+                                          <td><b>{{match.score1}} - {{match.score2}}</td>
+                                            <td><b>{{match.team2.name}}</td><td><b>{{match.team1.name}}</td>
+                                            <td><b>{{match.score1}} - {{match.score2}}</td>
+                                              <td><b>{{match.team2.name}}</td><td><b>{{match.team1.name}}</td>
+                                              <td><b>{{match.score1}} - {{match.score2}}</td>
+                                                <td><b>{{match.team2.name}}</td><td><b>{{match.team1.name}}</td>
+                                                <td><b>{{match.score1}} - {{match.score2}}</td>
+                                                  <td><b>{{match.team2.name}}</td><td><b>{{match.team1.name}}</td>
+                                                  <td><b>{{match.score1}} - {{match.score2}}</td>
+                                                    <td><b>{{match.team2.name}}</td>
         </tr>
       </tbody>
     </table>
