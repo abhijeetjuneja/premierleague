@@ -1,5 +1,5 @@
 //Declare the module\
-var app=angular.module('footballApp',['ngRoute','ngTouch']).
+var app=angular.module('footballApp',['ngRoute']).
 run(function() {
     FastClick.attach(document.body);
   });
@@ -36,7 +36,7 @@ app.controller('mainController',['detailService',function(detailService){
   m.setback=function(bg){
     detailService.bg=bg;
 
-  }
+  };
 
 //Identify if touch device and set grayscale if not
   if(is_touch_device())
