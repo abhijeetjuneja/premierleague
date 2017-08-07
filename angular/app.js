@@ -1,5 +1,8 @@
 //Declare the module\
-var app=angular.module('footballApp',['ngRoute']);
+var app=angular.module('footballApp',['ngRoute','ngTouch']).
+run(function() {
+    FastClick.attach(document.body);
+  });
 
 app.filter('startFrom', function() {
     return function(input, start) {
