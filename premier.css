@@ -1,5 +1,7 @@
 body{
 overflow-x: hidden;
+color:#38003d;
+font-family: 'Open Sans';
 }
 
 .navbar-default,.navbar-brand,.navbar-toggle{
@@ -33,6 +35,10 @@ overflow-x: hidden;
   background: white;
   color: black;
 
+}
+.detailButton{
+  margin-top: 2.5vmax;
+  float: left;
 }
 .first{
   background-image: url('http://img05.deviantart.net/8ebe/i/2016/123/c/a/wallpaper_iphone_leicester_city_champion_premier_by_ghanibvb-da1738a.jpg');
@@ -169,14 +175,19 @@ overflow-x: hidden;
  .table th{
    text-align: center;
  }
+ td:hover{
+  cursor: pointer;
+  background-color: black;
+ }
  .table td{
    -webkit-overflow-scrolling: touch!important;
  }
- .table{
+ .matchTable{
+  table-layout: fixed;
     -webkit-overflow-scrolling: touch!important;
  }
  .well{
-
+  
     -webkit-overflow-scrolling: touch!important;
  }
  .pre-scrollable{
@@ -187,6 +198,12 @@ overflow-x: hidden;
  }
 .font-white{
   color: white;
+}
+a:hover{
+  cursor: pointer;
+}
+tr:hover{
+  background-color: black!important;
 }
 
 #myFooter {
@@ -310,7 +327,7 @@ padding-right: 2px!important;
    padding-bottom: 5px;
    font-size: 4vmin;
  }
- 
+
 }
 
 @media screen and (max-width: 394px){

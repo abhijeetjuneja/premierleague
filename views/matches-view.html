@@ -57,12 +57,12 @@
         <span class="caret"></span></button>
         <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
             <li role="presentation" >
-              <a role="menuitem" tabindex="-1" ng-click="matches.filterItem(matches.list.data.rounds[0].matches[0].date,1)" >
+              <a role="menuitem" tabindex="-1" ng-click="matches.filterItem(matches.list.data.rounds[0].matches[0].date,1,1)" >
                 {{matches.list.data.rounds[0].matches[0].date | date : "y"}}
               </a>
             </li>
             <li role="presentation">
-              <a role="menuitem" tabindex="-1"  ng-click="matches.filterItem(matches.list.data.rounds[37].matches[0].date,1)" >
+              <a role="menuitem" tabindex="-1"  ng-click="matches.filterItem(matches.list.data.rounds[37].matches[0].date,1,2)" >
                 {{matches.list.data.rounds[37].matches[0].date | date : "y"}}
               </a>
           </li>
@@ -115,7 +115,7 @@
 </div>
 
 
-  <div class="well well-xs pre-scrollable myScores text-center">
+  <div class="well well-xs myScores text-center">
     <table class="table table-responsive table-hover matchTable text-center">
       <thead>
         <tr>
@@ -124,16 +124,27 @@
           <th>Away</th>
         </tr>
       </thead>
-      <tbody ng-repeat="match in matches.list.data.rounds">
+      <div class="tabButtons font-white">
+      <center><button class="btn btn-primary btn-group2" ng-disabled="matches.currentPage == 0" ng-click="matches.currentPage=matches.currentPage-1">
+        <b>Previous</b>
+    </button>
+    <b>{{matches.currentPage+1}}/{{matches.numberOfPages(filtered.length)}}</b>
+    <button class="btn btn-primary btn-group2" ng-disabled="matches.currentPage >= filtered.length/matches.pageSize - 1" ng-click="matches.currentPage=matches.currentPage+1">
+        <b>Next</b>
+    </button>
+    </center>
+    </div>
+      <tbody>
 
-         <tr ng-click="matches.showDetail(matches.list.data.rounds[$parent.$index].matches[$index])"ng-repeat="match in match.matches | filter : matches.item">
+         <tr ng-repeat="match in filtered = (matches.matches | filter : matches.item ) | startFrom:matches.currentPage*matches.pageSize | limitTo:matches.pageSize" ng-click="matches.showDetail(match)">
           <td><b>{{match.team1.name}}</td>
           <td><b>{{match.score1}} - {{match.score2}}</td>
             <td><b>{{match.team2.name}}</td>
         </tr>
+
       </tbody>
-    </table>
+      </table>
   </div>
-  </div>
+   
 </div>
 </div>

@@ -1,6 +1,13 @@
 //Declare the module\
 var app=angular.module('footballApp',['ngRoute']);
 
+app.filter('startFrom', function() {
+    return function(input, start) {
+        start = +start; //parse to int
+        return input.slice(start);
+    }
+});
+
 //Declare service for lists for the two json files
 app.service('detailService', function() {
     var matchdetail="";
@@ -70,6 +77,16 @@ app.controller('matchesController',['$scope','$http','$location','detailService'
   var m=this;
 
   m.list={};
+  m.matches=[];
+  this.currentPage = 0;
+    this.pageSize = 10;
+
+      this.numberOfPages=function(l){
+        console.log("firedlength");
+        console.log(l);
+        console.log(Math.ceil(l/m.pageSize));
+        return Math.ceil(l/m.pageSize);
+    };
 
 //First http request
   var url='https://raw.githubusercontent.com/openfootball/football.json/master/2015-16/en.1.json';
@@ -78,16 +95,31 @@ app.controller('matchesController',['$scope','$http','$location','detailService'
     if(detailService.list===detailService.list1)
     {
       detailService.list=data;
+      for(var i in data.data.rounds)
+      {
+        for(var j in data.data.rounds[i].matches)
+        {
+          if(data.data.rounds[i].matches[j].score1==null&&data.data.rounds[i].matches[j].score2==null)
+          {
+            data.data.rounds[i].matches[j].score1=0;
+            data.data.rounds[i].matches[j].score2=0;
+          }
+          else
+          m.matches.push(data.data.rounds[i].matches[j]);
+        }
+      }
       m.list=data;
       m.bg=detailService.bg;
-      console.log(m.bg);
+      console.log(data);
+      console.log(m.list);
+      console.log(m.matches);
       setTeams();
       addYearandMatchday();
       detailService.list1=data;
-
-      console.log(m.list);
+      
+      
     }
-    console.log(m.list);
+    
     },function(data){
         console.log("error");
     });
@@ -99,14 +131,21 @@ app.controller('matchesController',['$scope','$http','$location','detailService'
       if(detailService.list===detailService.list2)
       {
         detailService.list=data;
+        for(var i in data.data.rounds)
+        {
+          for(var j in data.data.rounds[i].matches)
+          {
+            m.matches.push(data.data.rounds[i].matches[j]);
+          }
+        }
           m.list=data;
           m.bg=detailService.bg;
-          console.log(m.bg);
+          
         setTeams();
         addYearandMatchday();
         detailService.list2=data;
 
-        console.log("works2");
+        
       }
 
   },function(data){
@@ -115,18 +154,31 @@ app.controller('matchesController',['$scope','$http','$location','detailService'
 
   //Add separate fields for year and matchday calculated from given data
    function addYearandMatchday(){
-    for(i in m.list.data.rounds)
-      for(j in m.list.data.rounds[i].matches)
+    var j=0;
+    var count=1;
+    for(var i in m.matches)
+    {
+      m.matches[i].abc=findYear(m.matches[i].date);
+      m.matches[i].goals=findGoals(m.matches[i].score1,m.matches[i].score2);
+      if(count>9&&count%10==0)
       {
-      m.list.data.rounds[i].matches[j].abc=findYear(m.list.data.rounds[i].matches[j].date);
-      m.list.data.rounds[i].matches[j].goals=findGoals(m.list.data.rounds[i].matches[j].score1,m.list.data.rounds[i].matches[j].score2);
-      m.list.data.rounds[i].matches[j].matchday="Matchday"+i;
+      m.matches[i].matchday="Matchday"+j;
+      console.log(m.matches[i].matchday);
+      j++;
       }
-      console.log(m.list);
+      else
+      {
+        m.matches[i].matchday="Matchday"+j;
+        console.log(m.matches[i].matchday);
+      }
+      count++;
+    }
+    console.log(m.matches);
+    
   }
 
     function findYear(d){
-       console.log("year working");
+       
        return d.substring(0,4);
      }
    function findGoals(s1,s2){
@@ -146,13 +198,13 @@ app.controller('matchesController',['$scope','$http','$location','detailService'
           m.list=detailService.list1;
         else
           m.list=detailService.list2;
-          console.log(m.list);
+         
       };
   m.teams=[];
   //Create teams array in m.teams
    function setTeams(){
         var i=0;
-        console.time("runs");
+       
         while(detailService.list.data.rounds[0].matches[i])
         {
           m.teams.push(
@@ -163,8 +215,7 @@ app.controller('matchesController',['$scope','$http','$location','detailService'
             );
             i++;
         }
-        console.timeEnd("runs");
-          console.log(m.teams.sort());
+        
       }
     m.team="";
     m.id=0;
@@ -172,27 +223,46 @@ app.controller('matchesController',['$scope','$http','$location','detailService'
 
     //Check the filter
     m.selected=function(id){
+      m.currentPage = 0;
+       $(".tabButtons").show();
+
       m.item="";
       m.id=id;
-    }
+
+    };
 
     //Check the filter entry
-    m.filterItem=function(item,id){
+    m.filterItem=function(item,id,yearid){
+      
+     
+     
+         m.pageSize=10;
+        m.currentPage=0;
+     
+    
+        
+     
       if(id==1)
       {
       m.item=item.substring(0,4);
+      
     console.log(m.item);
     }
       else
       {
         if(id==4)
         {
+          
           m.item="Matchday"+item;
+          console.log(m.item);
+          console.log(m.list);
+          console.log(m.matches);
+          $(".tabButtons").hide();
         }
         else
     m.item=item;
     }
-    }
+    };
 
 
 
@@ -201,7 +271,7 @@ app.controller('matchesController',['$scope','$http','$location','detailService'
         detailService.matchdetail=obj;
         $location.path("/match-detail-view");
 
-      }
+      };
 
 }]);
 
@@ -212,6 +282,12 @@ app.controller('detailController',['detailService',function(detailService){
     m.match=detailService.matchdetail;
     m.bg=detailService.bg;
     m.review="";
+
+
+    //Back button
+    this.goBack =function() {
+    window.history.back();
+    };
 
     //Custom comments on a match
     if(m.match.score1>m.match.score2)
@@ -233,6 +309,11 @@ app.controller('tableController',['detailService',function(detailService){
   var m=this;
   m.teams=[];
   m.bg=detailService.bg;
+
+  //Back button
+    this.goBack =function() {
+    window.history.back();
+    };
 
   //Create custom list containing all points and stats
   for (i in detailService.list.data.rounds[0].matches)
